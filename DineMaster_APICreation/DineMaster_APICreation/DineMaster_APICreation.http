@@ -1,0 +1,6 @@
+@DineMaster_APICreation_HostAddress = http://localhost:5025
+
+GET {{DineMaster_APICreation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

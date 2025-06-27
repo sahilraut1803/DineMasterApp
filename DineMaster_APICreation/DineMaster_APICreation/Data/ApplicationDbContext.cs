@@ -1,0 +1,20 @@
+﻿using Microsoft.EntityFrameworkCore;
+using DineMaster_APICreation.Models;
+namespace DineMaster_APICreation.Data
+{
+    public class ApplicationDbContext:DbContext
+    {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options):base(options)
+        {
+
+        }
+        public DbSet<UserModel> Users { get; set; }
+        public DbSet<CategoryMaster> CategoryMasters { get; set; }
+        public DbSet<MenuMaster> MenuMaster { get; set; }
+        public DbSet<MenuIngradients> MenuIngradients { get; set; }
+        public DbSet<IngradientMaster> IngradientMaster { get; set; }
+
+
+
+    }
+}
