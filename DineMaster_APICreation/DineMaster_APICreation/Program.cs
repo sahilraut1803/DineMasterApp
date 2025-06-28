@@ -1,4 +1,6 @@
+using AutoMapper;
 using DineMaster_APICreation.Data;
+using DineMaster_APICreation.Mapping;
 using DineMaster_APICreation.Repository;
 using DineMaster_APICreation.Services;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +24,10 @@ builder.Services.AddDbContext<ApplicationDbContext>
         )
     );
 builder.Services.AddScoped<IUserRepo, UserServices>();
+builder.Services.AddScoped<ITableRepo, TableService>();
+builder.Services.AddScoped<IReservationRepo, ReservationService>();
+
+builder.Services.AddAutoMapper(typeof(MappingData));
 
 var app = builder.Build();
 

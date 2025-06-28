@@ -14,7 +14,18 @@ namespace DineMaster_APICreation.Data
         public DbSet<MenuIngradients> MenuIngradients { get; set; }
         public DbSet<IngradientMaster> IngradientMaster { get; set; }
 
+        public DbSet<Table> Tables { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //Reservation-Table
+            modelBuilder.Entity<Reservation>()
+                .HasOne(r => r.Table)
+                .WithMany(t => t.Reservations)
+                .HasForeignKey(r => r.TableId)
+                .OnDelete(DeleteBehavior.Restrict);
+        }
 
     }
 }
