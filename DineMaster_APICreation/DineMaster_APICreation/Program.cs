@@ -33,7 +33,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("App", policy =>
     {
-        policy.WithOrigins("http://localhost:4200", "https://localhost:4200")// consuming app
+        policy.WithOrigins("http://localhost:4200")// consuming app
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials(); // required for cookies
@@ -42,14 +42,14 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+app.UseCors("App");
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-app.UseCors("App");
 
 app.UseHttpsRedirection();
 

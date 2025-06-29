@@ -19,7 +19,7 @@ namespace DineMaster_APICreation.Controllers
         public async Task<IActionResult> AddTable(TableDTO1 dto)
         {
             await repo.AddTableAsync(dto);
-            return Ok("Added Successfully");
+            return Ok(new { message = "Added Successfully" });
         }
 
         [HttpGet("FetchTable")]
@@ -40,7 +40,7 @@ namespace DineMaster_APICreation.Controllers
         public async Task<IActionResult> UpdateTable(TableDTO3 dto)
         {
             await repo.UpdateTableAsync(dto);
-            return Ok("Updated Successfully");
+            return Ok(new { message = "Updated Successfully" });
         }
 
         [HttpDelete("DeleteTable/{id}")]
@@ -49,11 +49,11 @@ namespace DineMaster_APICreation.Controllers
             int r = await repo.DeleteTableAsync(id);
             if (r > 0)
             {
-                return Ok("Deleted Successfully");
+                return Ok(new { message = "Deleted Successfully" });
             }
             else
             {
-                return NotFound("Cannot delete this record");
+                return NotFound(new { message = "Cannot delete this record" });
             }
         }
     }
