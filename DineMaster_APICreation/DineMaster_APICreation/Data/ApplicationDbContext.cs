@@ -16,6 +16,7 @@ namespace DineMaster_APICreation.Data
 
         public DbSet<Table> Tables { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -24,6 +25,13 @@ namespace DineMaster_APICreation.Data
                 .HasOne(r => r.Table)
                 .WithMany(t => t.Reservations)
                 .HasForeignKey(r => r.TableId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            //Order-Table
+            modelBuilder.Entity<Order>()
+                .HasOne(o => o.Table)
+                .WithMany(t => t.Orders)
+                .HasForeignKey(o => o.TableId)
                 .OnDelete(DeleteBehavior.Restrict);
         }
 

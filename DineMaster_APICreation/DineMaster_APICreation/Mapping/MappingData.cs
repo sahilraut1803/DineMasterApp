@@ -16,6 +16,8 @@ namespace DineMaster_APICreation.Mapping
             CreateMap<Reservation, ReservationDTO2>()
             .ForMember(dest => dest.Tname, opt => opt.MapFrom(src => src.Table != null ? src.Table.Name : "")).ReverseMap();
             CreateMap<Reservation, ReservationDTO3>().ReverseMap();
+
+            CreateMap<Order, OrderDTO1>().ReverseMap();
         }
     }
 }
