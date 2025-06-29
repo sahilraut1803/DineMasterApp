@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\admin\\Documents\\GitHub\\DineMasterApp\\DineMaster_APICreation\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2B07B8FE-9313-488F-B3EB-0742D4F2B187}|DineMaster_APICreation\\DineMaster_APICreation.csproj|c:\\users\\admin\\documents\\github\\dinemasterapp\\dinemaster_apicreation\\dinemaster_apicreation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{2B07B8FE-9313-488F-B3EB-0742D4F2B187}|DineMaster_APICreation\\DineMaster_APICreation.csproj|solutionrelative:dinemaster_apicreation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{2B07B8FE-9313-488F-B3EB-0742D4F2B187}|DineMaster_APICreation\\DineMaster_APICreation.csproj|c:\\users\\admin\\documents\\github\\dinemasterapp\\dinemaster_apicreation\\dinemaster_apicreation\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B07B8FE-9313-488F-B3EB-0742D4F2B187}|DineMaster_APICreation\\DineMaster_APICreation.csproj|solutionrelative:dinemaster_apicreation\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B07B8FE-9313-488F-B3EB-0742D4F2B187}|DineMaster_APICreation\\DineMaster_APICreation.csproj|c:\\users\\admin\\documents\\github\\dinemasterapp\\dinemaster_apicreation\\dinemaster_apicreation\\services\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B07B8FE-9313-488F-B3EB-0742D4F2B187}|DineMaster_APICreation\\DineMaster_APICreation.csproj|solutionrelative:dinemaster_apicreation\\services\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B07B8FE-9313-488F-B3EB-0742D4F2B187}|DineMaster_APICreation\\DineMaster_APICreation.csproj|c:\\users\\admin\\documents\\github\\dinemasterapp\\dinemaster_apicreation\\dinemaster_apicreation\\repository\\ireservationrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B07B8FE-9313-488F-B3EB-0742D4F2B187}|DineMaster_APICreation\\DineMaster_APICreation.csproj|solutionrelative:dinemaster_apicreation\\repository\\ireservationrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B07B8FE-9313-488F-B3EB-0742D4F2B187}|DineMaster_APICreation\\DineMaster_APICreation.csproj|c:\\users\\admin\\documents\\github\\dinemasterapp\\dinemaster_apicreation\\dinemaster_apicreation\\mapping\\mappingdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B07B8FE-9313-488F-B3EB-0742D4F2B187}|DineMaster_APICreation\\DineMaster_APICreation.csproj|solutionrelative:dinemaster_apicreation\\mapping\\mappingdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B07B8FE-9313-488F-B3EB-0742D4F2B187}|DineMaster_APICreation\\DineMaster_APICreation.csproj|c:\\users\\admin\\documents\\github\\dinemasterapp\\dinemaster_apicreation\\dinemaster_apicreation\\dto\\reservationdto4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B07B8FE-9313-488F-B3EB-0742D4F2B187}|DineMaster_APICreation\\DineMaster_APICreation.csproj|solutionrelative:dinemaster_apicreation\\dto\\reservationdto4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2B07B8FE-9313-488F-B3EB-0742D4F2B187}|DineMaster_APICreation\\DineMaster_APICreation.csproj|c:\\users\\admin\\documents\\github\\dinemasterapp\\dinemaster_apicreation\\dinemaster_apicreation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B07B8FE-9313-488F-B3EB-0742D4F2B187}|DineMaster_APICreation\\DineMaster_APICreation.csproj|solutionrelative:dinemaster_apicreation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\Documents\\GitHub\\DineMasterApp\\DineMaster_APICreation\\DineMaster_APICreation\\Migrations\\20250628143233_ks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DineMaster_APICreation\\Migrations\\20250628143233_ks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2B07B8FE-9313-488F-B3EB-0742D4F2B187}|DineMaster_APICreation\\DineMaster_APICreation.csproj|c:\\users\\admin\\documents\\github\\dinemasterapp\\dinemaster_apicreation\\dinemaster_apicreation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2B07B8FE-9313-488F-B3EB-0742D4F2B187}|DineMaster_APICreation\\DineMaster_APICreation.csproj|solutionrelative:dinemaster_apicreation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2B07B8FE-9313-488F-B3EB-0742D4F2B187}|DineMaster_APICreation\\DineMaster_APICreation.csproj|c:\\users\\admin\\documents\\github\\dinemasterapp\\dinemaster_apicreation\\dinemaster_apicreation\\models\\menuingradients.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,6 +49,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{2B07B8FE-9313-488F-B3EB-0742D4F2B187}|DineMaster_APICreation\\DineMaster_APICreation.csproj|c:\\users\\admin\\documents\\github\\dinemasterapp\\dinemaster_apicreation\\dinemaster_apicreation\\repository\\iuserrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B07B8FE-9313-488F-B3EB-0742D4F2B187}|DineMaster_APICreation\\DineMaster_APICreation.csproj|solutionrelative:dinemaster_apicreation\\repository\\iuserrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B07B8FE-9313-488F-B3EB-0742D4F2B187}|DineMaster_APICreation\\DineMaster_APICreation.csproj|c:\\users\\admin\\documents\\github\\dinemasterapp\\dinemaster_apicreation\\dinemaster_apicreation\\migrations\\20250628143233_ks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B07B8FE-9313-488F-B3EB-0742D4F2B187}|DineMaster_APICreation\\DineMaster_APICreation.csproj|solutionrelative:dinemaster_apicreation\\migrations\\20250628143233_ks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,6 +64,10 @@
           "DockedWidth": 200,
           "SelectedChildIndex": 14,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
@@ -85,8 +109,75 @@
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ReservationDTO4.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Documents\\GitHub\\DineMasterApp\\DineMaster_APICreation\\DineMaster_APICreation\\DTO\\ReservationDTO4.cs",
+              "RelativeDocumentMoniker": "DineMaster_APICreation\\DTO\\ReservationDTO4.cs",
+              "ToolTip": "C:\\Users\\admin\\Documents\\GitHub\\DineMasterApp\\DineMaster_APICreation\\DineMaster_APICreation\\DTO\\ReservationDTO4.cs",
+              "RelativeToolTip": "DineMaster_APICreation\\DTO\\ReservationDTO4.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T15:44:47.433Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MappingData.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Documents\\GitHub\\DineMasterApp\\DineMaster_APICreation\\DineMaster_APICreation\\Mapping\\MappingData.cs",
+              "RelativeDocumentMoniker": "DineMaster_APICreation\\Mapping\\MappingData.cs",
+              "ToolTip": "C:\\Users\\admin\\Documents\\GitHub\\DineMasterApp\\DineMaster_APICreation\\DineMaster_APICreation\\Mapping\\MappingData.cs",
+              "RelativeToolTip": "DineMaster_APICreation\\Mapping\\MappingData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T15:39:05.119Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ReservationController.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Documents\\GitHub\\DineMasterApp\\DineMaster_APICreation\\DineMaster_APICreation\\Controllers\\ReservationController.cs",
+              "RelativeDocumentMoniker": "DineMaster_APICreation\\Controllers\\ReservationController.cs",
+              "ToolTip": "C:\\Users\\admin\\Documents\\GitHub\\DineMasterApp\\DineMaster_APICreation\\DineMaster_APICreation\\Controllers\\ReservationController.cs",
+              "RelativeToolTip": "DineMaster_APICreation\\Controllers\\ReservationController.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAiwFcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T15:39:00.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ReservationService.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Documents\\GitHub\\DineMasterApp\\DineMaster_APICreation\\DineMaster_APICreation\\Services\\ReservationService.cs",
+              "RelativeDocumentMoniker": "DineMaster_APICreation\\Services\\ReservationService.cs",
+              "ToolTip": "C:\\Users\\admin\\Documents\\GitHub\\DineMasterApp\\DineMaster_APICreation\\DineMaster_APICreation\\Services\\ReservationService.cs",
+              "RelativeToolTip": "DineMaster_APICreation\\Services\\ReservationService.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAiwG4AAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T15:38:57.811Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "IReservationRepo.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Documents\\GitHub\\DineMasterApp\\DineMaster_APICreation\\DineMaster_APICreation\\Repository\\IReservationRepo.cs",
+              "RelativeDocumentMoniker": "DineMaster_APICreation\\Repository\\IReservationRepo.cs",
+              "ToolTip": "C:\\Users\\admin\\Documents\\GitHub\\DineMasterApp\\DineMaster_APICreation\\DineMaster_APICreation\\Repository\\IReservationRepo.cs",
+              "RelativeToolTip": "DineMaster_APICreation\\Repository\\IReservationRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T15:38:55.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "20250628143233_ks.cs",
               "DocumentMoniker": "C:\\Users\\admin\\Documents\\GitHub\\DineMasterApp\\DineMaster_APICreation\\DineMaster_APICreation\\Migrations\\20250628143233_ks.cs",
               "RelativeDocumentMoniker": "DineMaster_APICreation\\Migrations\\20250628143233_ks.cs",
@@ -94,16 +185,11 @@
               "RelativeToolTip": "DineMaster_APICreation\\Migrations\\20250628143233_ks.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T14:32:33.619Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+              "WhenOpened": "2025-06-28T14:32:33.619Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "MenuIngradients.cs",
               "DocumentMoniker": "C:\\Users\\admin\\Documents\\GitHub\\DineMasterApp\\DineMaster_APICreation\\DineMaster_APICreation\\Models\\MenuIngradients.cs",
               "RelativeDocumentMoniker": "DineMaster_APICreation\\Models\\MenuIngradients.cs",
@@ -111,12 +197,11 @@
               "RelativeToolTip": "DineMaster_APICreation\\Models\\MenuIngradients.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T07:53:55.251Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-27T07:53:55.251Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "IngradientMaster.cs",
               "DocumentMoniker": "C:\\Users\\admin\\Documents\\GitHub\\DineMasterApp\\DineMaster_APICreation\\DineMaster_APICreation\\Models\\IngradientMaster.cs",
               "RelativeDocumentMoniker": "DineMaster_APICreation\\Models\\IngradientMaster.cs",
@@ -124,12 +209,11 @@
               "RelativeToolTip": "DineMaster_APICreation\\Models\\IngradientMaster.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T07:53:54.189Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-27T07:53:54.189Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\admin\\Documents\\GitHub\\DineMasterApp\\DineMaster_APICreation\\DineMaster_APICreation\\appsettings.json",
               "RelativeDocumentMoniker": "DineMaster_APICreation\\appsettings.json",
@@ -137,25 +221,23 @@
               "RelativeToolTip": "DineMaster_APICreation\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-27T07:42:44.126Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-27T07:42:44.126Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\admin\\Documents\\GitHub\\DineMasterApp\\DineMaster_APICreation\\DineMaster_APICreation\\Program.cs",
               "RelativeDocumentMoniker": "DineMaster_APICreation\\Program.cs",
               "ToolTip": "C:\\Users\\admin\\Documents\\GitHub\\DineMasterApp\\DineMaster_APICreation\\DineMaster_APICreation\\Program.cs",
               "RelativeToolTip": "DineMaster_APICreation\\Program.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBYAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-26T19:22:59.47Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-26T19:22:59.47Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "UserModel.cs",
               "DocumentMoniker": "C:\\Users\\admin\\Documents\\GitHub\\DineMasterApp\\DineMaster_APICreation\\DineMaster_APICreation\\Models\\UserModel.cs",
               "RelativeDocumentMoniker": "DineMaster_APICreation\\Models\\UserModel.cs",
@@ -163,12 +245,11 @@
               "RelativeToolTip": "DineMaster_APICreation\\Models\\UserModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-26T18:50:15.905Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-26T18:50:15.905Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\admin\\Documents\\GitHub\\DineMasterApp\\DineMaster_APICreation\\DineMaster_APICreation\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "DineMaster_APICreation\\Controllers\\UserController.cs",
@@ -176,12 +257,11 @@
               "RelativeToolTip": "DineMaster_APICreation\\Controllers\\UserController.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAAwBcAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-26T18:46:47.768Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-26T18:46:47.768Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "IUserRepo.cs",
               "DocumentMoniker": "C:\\Users\\admin\\Documents\\GitHub\\DineMasterApp\\DineMaster_APICreation\\DineMaster_APICreation\\Repository\\IUserRepo.cs",
               "RelativeDocumentMoniker": "DineMaster_APICreation\\Repository\\IUserRepo.cs",
@@ -189,8 +269,7 @@
               "RelativeToolTip": "DineMaster_APICreation\\Repository\\IUserRepo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-26T18:40:46.525Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-26T18:40:46.525Z"
             }
           ]
         },

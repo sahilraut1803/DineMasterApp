@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DineMaster_APICreation")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+24cdef6a807005ea84dc3e7a8fece35c70680a6c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bdeefd5b249e1b7986316a74117a7774fa82d362")]
 [assembly: System.Reflection.AssemblyProductAttribute("DineMaster_APICreation")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DineMaster_APICreation")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

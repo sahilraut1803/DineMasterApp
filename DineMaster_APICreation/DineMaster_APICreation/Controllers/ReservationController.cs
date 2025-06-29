@@ -56,5 +56,49 @@ namespace DineMaster_APICreation.Controllers
                 return NotFound("Cannot delete this record");
             }
         }
+
+        [HttpGet("GetAvailableTable")]
+        public async Task<IActionResult> GetAvailableTable()
+        {
+            var data = await repo.GetAvailableTableAsync();
+            return Ok(data);
+        }
+
+        [HttpPost("GetSuitableTable")]
+        public async Task<IActionResult> GetSuitableTable(ReservationDTO4 dto)
+        {
+            if (dto.StartTime >= dto.EndTime)
+            {
+                return NotFound("End time must be after start time.");
+            }
+            var data = await repo.GetSuitableTableAsync(dto);
+            if (data.Count == 0)
+                return NotFound("No suitable tables available for the selected time slot.");
+            return Ok(data);
+        }
+
+        [HttpPut("CheckIn/{id}")]
+        public async Task<IActionResult> CheckIn(int id)
+        {
+            bool result = await repo.CheckInAsync(id);
+            if (!result)
+            {
+                return NotFound("Invalid reservation or already seated");
+            }
+
+            return Ok("Checked in successfully");
+        }
+
+        [HttpPut("CheckOut/{id}")]
+        public async Task<IActionResult> CheckOut(int id)
+        {
+            bool result = await repo.CheckOutAsync(id);
+            if (!result)
+            {
+                return NotFound("Invalid reservation or already completed");
+            }
+            return Ok("Checked out successfully");
+        }
+
     }
 }

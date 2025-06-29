@@ -73,5 +73,68 @@ namespace DineMaster_APICreation.Services
                 return 0;
             }
         }
+        public async Task<List<TableDTO2>> GetAvailableTableAsync()
+        {
+            var data = await db.Tables.Where(x=>x.Status!="Maintenance").ToListAsync();
+            var table = mapper.Map<List<TableDTO2>>(data);
+            return table;
+        }
+
+        public async Task<List<TableDTO2>> GetSuitableTableAsync(ReservationDTO4 reservation)
+        {
+            var availableTables = await db.Tables
+                .Where(t =>
+                    t.Capacity >= reservation.GuestsCount &&
+                    t.Status != "Maintenance" &&
+                    !db.Reservations.Any(r =>
+                        r.TableId == t.TableId &&
+                        r.Status != "Cancelled" &&
+                        reservation.StartTime < r.EndTime &&
+                        reservation.EndTime > r.StartTime
+                    )
+                )
+                .OrderBy(t => t.Capacity)
+                .ToListAsync();
+
+            var data = mapper.Map<List<TableDTO2>>(availableTables);
+            return data;
+        }
+
+        public async Task<bool> CheckInAsync(int id)
+        {
+            var reservation = await db.Reservations.FindAsync(id);
+            if (reservation == null || reservation.Status != "Booked")
+            {
+                return false;
+            }
+            reservation.Status = "Seated";
+
+            var table = await db.Tables.FindAsync(reservation.TableId);
+            if (table != null)
+            {
+                table.Status = "Occupied";
+            }
+            await db.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> CheckOutAsync(int id)
+        {
+            var reservation = await db.Reservations.FindAsync(id);
+            if (reservation == null || reservation.Status != "Seated")
+            {
+                return false;
+            }
+            reservation.Status = "Completed";
+
+            var table = await db.Tables.FindAsync(reservation.TableId);
+            if (table != null)
+            {
+                table.Status = "Available";
+            }
+            await db.SaveChangesAsync();
+            return true;
+        }
+
     }
 }
