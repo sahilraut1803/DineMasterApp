@@ -14,6 +14,8 @@ namespace DineMaster_APICreation.Models
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         public int TableId { get; set; }
+        public decimal? TotalAmount { get; set; }
+        public bool? IsPaid { get; set; }
         public DateTime CreatedAt { get; set; }
         public string CreatedBy { get; set; }
         public DateTime? ModifiedAt { get; set; }

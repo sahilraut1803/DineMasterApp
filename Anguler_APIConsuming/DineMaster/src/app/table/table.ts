@@ -7,14 +7,16 @@ import { response } from 'express';
 declare var $:any;
 @Component({
   selector: 'app-table',
-  standalone: true,
   imports: [CommonModule,ReactiveFormsModule,FormsModule],
   templateUrl: './table.html',
   styleUrl: './table.scss'
 })
 export class Table implements OnInit{
-  constructor(private ts:MasterTable, private cd: ChangeDetectorRef) {}
+  constructor(private ts:TableService, private cd: ChangeDetectorRef) {}
 
+  ngOnInit(): void {
+    this.getTableDetails();
+  }
   isEditMode = false;
 
   details=new FormGroup({
@@ -27,20 +29,18 @@ export class Table implements OnInit{
   });
   tabledata:any;
   // tabledata:any[]=[];
-  ngOnInit(): void {
-    this.getTableDetails();
-  }
 
-  getTableDetails(): void {
-    this.ts.fetchTable().subscribe(
-      (response) => {
-        this.tabledata = response;
-        console.log('Fetched Table Data:', response);
+  getTableDetails(){
+    this.ts.fetchTable().subscribe({
+      next:(res) => {
+        console.log('Fetched Table Data:', res);
+        this.tabledata = res;
+        this.cd.detectChanges();
       },
-      (error) => {
-        console.error('Error fetching table data:', error.message);
+      error:(err) => {
+        console.log('Error fetching table data:', err.message);
       }
-    );
+    });
   }
   // getTableDetails() {
   //   this.ts.fetchTable().subscribe({
@@ -58,7 +58,7 @@ export class Table implements OnInit{
   openAddModal() {
     this.isEditMode = false;
     $('#modalH').text('Add New Table');
-    this.details.reset({ createdBy: 'Admin', modifiedBy: 'Admin' });
+    this.details.reset({ createdBy: 'Admin'});
     $('#exampleModal').modal('show');
   }
 
@@ -71,10 +71,11 @@ export class Table implements OnInit{
           this.getTableDetails();
         },
         error: (err) => {
-          console.error('Error updating table:', err.message);
+          console.log('Error updating table:', err.message);
         }
       });
-    } else {
+    } 
+    else {
       this.ts.addTable(data).subscribe({
         next: (res) => {
           alert('✅ Table Added Successfully!');
@@ -82,25 +83,37 @@ export class Table implements OnInit{
           this.getTableDetails();
         },
         error: (err) => {
-          console.error('Error adding table:', err.message);
+          console.log('Error adding table:', err.message);
         }
       });
     }
   }
 
-  EditTable(id: any) {
-    this.ts.getTable(id).subscribe({
-      next: (res) => {
-        this.isEditMode = true;
-        $('#modalH').text('Edit Table');
-        this.details.patchValue({ ...res, modifiedBy: 'Admin' }); // autofill form
-        $('#exampleModal').modal('show');
-      },
-      error: (err) => {
-        console.error('Error fetching table by id:', err.message);
-      }
-    });
+  EditTable(data : any) {
+    this.isEditMode = true;
+    this.details.reset();
+    $('#modalH').text('Edit Table');
+    this.details.reset({ modifiedBy: 'Admin'});
+    this.details.controls.tableId.setValue(data.tableId);
+    this.details.controls.name.setValue(data.name);
+    this.details.controls.capacity.setValue(data.capacity);
+    this.details.controls.status.setValue(data.status);
+    $('#exampleModal').modal('show');           
   }
+
+  // EditTable(id: any) {
+  //   this.ts.getTable(id).subscribe({
+  //     next: (res) => {
+  //       this.isEditMode = true;
+  //       $('#modalH').text('Edit Table');
+  //       this.details.patchValue({ ...res, modifiedBy: 'Admin' }); // autofill form
+  //       $('#exampleModal').modal('show');
+  //     },
+  //     error: (err) => {
+  //       console.error('Error fetching table by id:', err.message);
+  //     }
+  //   });
+  // }
 
   DelTable(id: any) {
     if (confirm('Are you sure you want to delete this table?')) {

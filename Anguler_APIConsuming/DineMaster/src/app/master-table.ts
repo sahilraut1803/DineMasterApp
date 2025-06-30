@@ -15,13 +15,18 @@ export class MasterTable {
   url4="https://localhost:7291/api/Table/GetTable/";
   url5="https://localhost:7291/api/Table/UpdateTable/";
 
-  fetchTable(): Observable<any> {
-    return this.http.get<any>(this.url2);
-  }
+  // fetchTable(): Observable<any> {
+  //   return this.http.get<any>(this.url2);
+  // }
 
   // fetchTable(): Observable<any[]> {
   //   return this.http.get<any[]>(this.url2);
   // }
+
+  fetchTable(){
+    return this.http.get(this.url2);
+  }
+
   addTable(tdata:any){
     return this.http.post(this.url1, tdata);
   }
