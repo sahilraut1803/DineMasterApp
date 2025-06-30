@@ -19,7 +19,7 @@ namespace DineMaster_APICreation.Controllers
         public async Task<IActionResult> AddReservation(ReservationDTO1 dto)
         {
             await repo.AddReservationAsync(dto);
-            return Ok("Added Successfully");
+            return Ok(new { message = "Added Successfully" });
         }
 
         [HttpGet("FetchReservation")]
@@ -40,7 +40,7 @@ namespace DineMaster_APICreation.Controllers
         public async Task<IActionResult> UpdateReservation(ReservationDTO3 dto)
         {
             await repo.UpdateReservationAsync(dto);
-            return Ok("Updated Successfully");
+            return Ok(new { message = "Updated Successfully" });
         }
 
         [HttpDelete("DeleteReservation/{id}")]
@@ -49,11 +49,11 @@ namespace DineMaster_APICreation.Controllers
             int r = await repo.DeleteReservationAsync(id);
             if (r > 0)
             {
-                return Ok("Deleted Successfully");
+                return Ok(new { message = "Deleted Successfully" });
             }
             else
             {
-                return NotFound("Cannot delete this record");
+                return NotFound(new { message = "Cannot delete this record" });
             }
         }
 
@@ -69,11 +69,11 @@ namespace DineMaster_APICreation.Controllers
         {
             if (dto.StartTime >= dto.EndTime)
             {
-                return NotFound("End time must be after start time.");
+                return NotFound(new { message = "End time must be after start time." });
             }
             var data = await repo.GetSuitableTableAsync(dto);
             if (data.Count == 0)
-                return NotFound("No suitable tables available for the selected time slot.");
+                return NotFound(new { message = "No suitable tables available for the selected time slot." });
             return Ok(data);
         }
 
@@ -83,10 +83,10 @@ namespace DineMaster_APICreation.Controllers
             bool result = await repo.CheckInAsync(id);
             if (!result)
             {
-                return NotFound("Invalid reservation or already seated");
+                return NotFound(new { message = "Invalid reservation or already seated" });
             }
 
-            return Ok("Checked in successfully");
+            return Ok(new { message = "Checked in successfully" });
         }
 
         [HttpPut("CheckOut/{id}")]
@@ -95,9 +95,9 @@ namespace DineMaster_APICreation.Controllers
             bool result = await repo.CheckOutAsync(id);
             if (!result)
             {
-                return NotFound("Invalid reservation or already completed");
+                return NotFound(new { message = "Invalid reservation or already completed" });
             }
-            return Ok("Checked out successfully");
+            return Ok(new { message = "Checked out successfully" });
         }
 
     }

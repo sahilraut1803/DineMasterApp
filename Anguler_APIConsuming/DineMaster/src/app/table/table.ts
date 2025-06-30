@@ -1,8 +1,9 @@
 import { ChangeDetectorRef,Component, OnInit } from '@angular/core';
 import { TableService } from '../table-service';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MasterTable } from '../master-table';
+import { response } from 'express';
 declare var $:any;
 @Component({
   selector: 'app-table',
@@ -18,30 +19,41 @@ export class Table implements OnInit{
 
   details=new FormGroup({
     tableId: new FormControl(''),
-    name:new FormControl(''),
-    capacity:new FormControl(''),
-    status:new FormControl(''),
+    name:new FormControl('',[Validators.required,Validators.maxLength(10)]),
+    capacity:new FormControl('',[Validators.required, Validators.min(2), Validators.max(10)]),
+    status:new FormControl('',[Validators.required]),
     createdBy:new FormControl('Admin'),
     modifiedBy:new FormControl('Admin')
   });
-  tabledata:any[]=[];
-  
+  tabledata:any;
+  // tabledata:any[]=[];
   ngOnInit(): void {
     this.getTableDetails();
   }
 
-  getTableDetails() {
-    this.ts.fetchTable().subscribe({
-      next: (res) => {
-        this.tabledata = res;
-        this.cd.detectChanges(); 
-        console.log('Fetched Table Data:', res);
+  getTableDetails(): void {
+    this.ts.fetchTable().subscribe(
+      (response) => {
+        this.tabledata = response;
+        console.log('Fetched Table Data:', response);
       },
-      error: (err) => {
-        console.error('Error fetching table data:', err.message);
+      (error) => {
+        console.error('Error fetching table data:', error.message);
       }
-    });
+    );
   }
+  // getTableDetails() {
+  //   this.ts.fetchTable().subscribe({
+  //     next: (res) => {
+  //       this.tabledata = res;
+  //       this.cd.detectChanges(); 
+  //       console.log('Fetched Table Data:', res);
+  //     },
+  //     error: (err) => {
+  //       console.error('Error fetching table data:', err.message);
+  //     }
+  //   });
+  // }
 
   openAddModal() {
     this.isEditMode = false;
@@ -107,4 +119,17 @@ export class Table implements OnInit{
       });
     }
   }
+
+  get name() {
+    return this.details.controls.name;
+  }
+
+  get capacity() {
+    return this.details.controls.capacity;
+  }
+
+  get status() {
+    return this.details.controls.status;
+  }
+
 }

@@ -52,25 +52,51 @@
       <div class="modal-body">
         <form method="post" [formGroup]="details" (ngSubmit)="SaveOrUpdateTable(details.value)">
           <div class="mb-3">
-            <label class="form-label">Name</label>
-            <input type="text" formControlName="name" class="form-control" placeholder="Enter Table Name">
+            <input type="text"
+                  class="form-control"
+                  formControlName="name"
+                  placeholder="Enter Name"
+                  [class.is-invalid]="name.invalid && name.touched">
+
+            <div *ngIf="name.invalid && name.touched">
+              <div class="text-danger" *ngIf="name.errors?.['required']">Fill out this Field</div> 
+              <div class="text-danger" *ngIf="name.errors?.['maxlength']">Max 10 characters allowed</div>
+            </div>
           </div>
           <div class="mb-3">
-            <label class="form-label">Capacity</label>
-            <input type="number" formControlName="capacity" class="form-control" placeholder="Enter Capacity">
+            <input type="number"
+                  class="form-control"
+                  formControlName="capacity"
+                  placeholder="Enter Capacity"
+                  [class.is-invalid]="capacity.invalid && capacity.touched">
+
+            <div *ngIf="capacity.invalid && capacity.touched">
+              <div class="text-danger" *ngIf="capacity.errors?.['required']">Fill out this Field</div> 
+              <div class="text-danger" *ngIf="capacity.errors?.['min']">Min 2 capacity allowed</div> 
+              <div class="text-danger" *ngIf="capacity.errors?.['max']">Max 10 capacity allowed</div>
+            </div>
           </div>
           <div class="mb-3">
             <label class="form-label">Status</label>
-            <select class="form-control" formControlName="status">
-              <option value="" disabled selected>Select Status</option>
+            <select class="form-control"
+                    formControlName="status"
+                    [class.is-invalid]="status.invalid && status.touched">
+              <option value="" disabled>Select Status</option>
               <option value="Available">Available</option>
               <option value="Occupied">Occupied</option>
               <option value="Maintenance">Maintenance</option>
             </select>
+
+            <div *ngIf="status.invalid && status.touched">
+              <div class="text-danger" *ngIf="status.errors?.['required']">Please select a status</div>
+            </div>
           </div>
           <input type="hidden" formControlName="createdBy" value="Admin">
 
-          <button type="submit" class="btn btn-success w-100">Save</button>
+          <button type="submit" class="btn btn-success w-100" [disabled]="details.invalid">
+            {{ isEditMode ? 'Update' : 'Save' }}
+          </button>
+
         </form>
       </div>
 
