@@ -15,5 +15,6 @@ namespace DineMaster_APICreation.Models
         public DateTime? ModifiedAt { get; set; }
         public string? ModifiedBy { get; set; }
         public List<Reservation> Reservations { get; set; }
+        public List<Order> Orders { get; set; }
     }
 }

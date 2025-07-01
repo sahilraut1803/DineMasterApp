@@ -33,7 +33,20 @@ builder.Services.AddScoped<MenuCategoryRepo, MenuCategoryServices>();
 
 builder.Services.AddAutoMapper(typeof(MappingData));
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("App", policy =>
+    {
+        policy.WithOrigins("http://localhost:4200")// consuming app
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials(); // required for cookies
+    });
+});
+
 var app = builder.Build();
+
+app.UseCors("App");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

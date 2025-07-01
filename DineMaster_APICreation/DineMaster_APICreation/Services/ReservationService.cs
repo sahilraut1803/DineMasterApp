@@ -114,6 +114,14 @@ namespace DineMaster_APICreation.Services
             {
                 table.Status = "Occupied";
             }
+            OrderDTO1 order = new OrderDTO1();
+            order.TableId = reservation.TableId;
+            order.OrderType = "Dine in";
+            order.OrderedBy = reservation.CustomerName;
+            order.OrderDate=DateTime.Now;
+            order.OrderStatus = "pending";
+            var data = mapper.Map<Order>(order);
+            await db.Orders.AddAsync(data);
             await db.SaveChangesAsync();
             return true;
         }
