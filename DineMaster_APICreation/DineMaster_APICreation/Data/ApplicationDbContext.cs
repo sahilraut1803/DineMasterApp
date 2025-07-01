@@ -13,6 +13,11 @@ namespace DineMaster_APICreation.Data
         public DbSet<MenuMaster> MenuMaster { get; set; }
         public DbSet<MenuIngradients> MenuIngradients { get; set; }
         public DbSet<IngradientMaster> IngradientMaster { get; set; }
+        public DbSet<OnlineOrder> OnlineOrder { get; set; }
+        public DbSet<OrderItem> OrderItem { get; set; }
+
+
+        public DbSet<OrderTracking> OrderTracking { get; set; }
 
         public DbSet<Table> Tables { get; set; }
         public DbSet<Reservation> Reservations { get; set; }

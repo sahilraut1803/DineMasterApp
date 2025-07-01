@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DineMasterAPICreation.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250628143233_ks")]
-    partial class ks
+    [Migration("20250630132831_mymigration")]
+    partial class mymigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -93,18 +93,23 @@ namespace DineMasterAPICreation.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MenuID"));
 
-                    b.Property<int>("CategoriID")
+                    b.Property<int>("CategoryID")
                         .HasColumnType("int");
 
-                    b.Property<string>("Description")
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsAvailable")
                         .HasColumnType("bit");
 
                     b.Property<string>("MenuImage")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MenuName")
@@ -112,12 +117,104 @@ namespace DineMasterAPICreation.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Prize")
-                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("MenuID");
 
+                    b.HasIndex("CategoryID");
+
                     b.ToTable("MenuMaster");
+                });
+
+            modelBuilder.Entity("DineMaster_APICreation.Models.OnlineOrder", b =>
+                {
+                    b.Property<int>("OrderID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderID"));
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsCompleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("OrderID");
+
+                    b.ToTable("OnlineOrder");
+                });
+
+            modelBuilder.Entity("DineMaster_APICreation.Models.OrderItem", b =>
+                {
+                    b.Property<int>("OrderItemID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderItemID"));
+
+                    b.Property<int>("MenuID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OrderID")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderItemID");
+
+                    b.HasIndex("MenuID");
+
+                    b.HasIndex("OrderID");
+
+                    b.ToTable("OrderItem");
+                });
+
+            modelBuilder.Entity("DineMaster_APICreation.Models.OrderTracking", b =>
+                {
+                    b.Property<int>("TrackingID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TrackingID"));
+
+                    b.Property<int>("OrderID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("StatusUpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("TrackingID");
+
+                    b.HasIndex("OrderID");
+
+                    b.ToTable("OrderTracking");
                 });
 
             modelBuilder.Entity("DineMaster_APICreation.Models.Reservation", b =>
@@ -224,8 +321,16 @@ namespace DineMasterAPICreation.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -233,6 +338,12 @@ namespace DineMasterAPICreation.Migrations
 
                     b.Property<string>("Role")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Username")
@@ -263,6 +374,47 @@ namespace DineMasterAPICreation.Migrations
                     b.Navigation("MenuMaster");
                 });
 
+            modelBuilder.Entity("DineMaster_APICreation.Models.MenuMaster", b =>
+                {
+                    b.HasOne("DineMaster_APICreation.Models.CategoryMaster", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("DineMaster_APICreation.Models.OrderItem", b =>
+                {
+                    b.HasOne("DineMaster_APICreation.Models.MenuMaster", "Menu")
+                        .WithMany()
+                        .HasForeignKey("MenuID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DineMaster_APICreation.Models.OnlineOrder", "Order")
+                        .WithMany("OrderItems")
+                        .HasForeignKey("OrderID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Menu");
+
+                    b.Navigation("Order");
+                });
+
+            modelBuilder.Entity("DineMaster_APICreation.Models.OrderTracking", b =>
+                {
+                    b.HasOne("DineMaster_APICreation.Models.OnlineOrder", "Order")
+                        .WithMany("OrderTrackings")
+                        .HasForeignKey("OrderID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+                });
+
             modelBuilder.Entity("DineMaster_APICreation.Models.Reservation", b =>
                 {
                     b.HasOne("DineMaster_APICreation.Models.Table", "Table")
@@ -282,6 +434,13 @@ namespace DineMasterAPICreation.Migrations
             modelBuilder.Entity("DineMaster_APICreation.Models.MenuMaster", b =>
                 {
                     b.Navigation("MenuIngredients");
+                });
+
+            modelBuilder.Entity("DineMaster_APICreation.Models.OnlineOrder", b =>
+                {
+                    b.Navigation("OrderItems");
+
+                    b.Navigation("OrderTrackings");
                 });
 
             modelBuilder.Entity("DineMaster_APICreation.Models.Table", b =>

@@ -23,9 +23,13 @@ builder.Services.AddDbContext<ApplicationDbContext>
             builder.Configuration.GetConnectionString("myConn")
         )
     );
+       
 builder.Services.AddScoped<IUserRepo, UserServices>();
 builder.Services.AddScoped<ITableRepo, TableService>();
 builder.Services.AddScoped<IReservationRepo, ReservationService>();
+builder.Services.AddScoped<MenuMasterRepo, MenuMasterServices>();
+builder.Services.AddScoped<MenuCategoryRepo, MenuCategoryServices>();
+
 
 builder.Services.AddAutoMapper(typeof(MappingData));
 

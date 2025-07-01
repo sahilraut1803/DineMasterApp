@@ -1,6 +1,8 @@
-﻿using DineMaster_APICreation.DTO;
+﻿using AutoMapper;
+using DineMaster_APICreation.DTO;
 using DineMaster_APICreation.Models;
 using DineMaster_APICreation.Repository;
+using DineMaster_APICreation.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,28 +20,70 @@ namespace DineMaster_APICreation.Controllers
         }
         [HttpPost]
         [Route("AddUser")]
-        public IActionResult AddUser(UserDTO dto)
+        public IActionResult AddUser([FromBody] UserDTO um)
         {
-            var data = new UserModel
+
+            repo.AddUser(um);
+            return Ok("User Added Sucessfully");
+        }
+
+        [HttpGet]
+        [Route("GetUsers")]
+        public IActionResult GetUsers()
+        {
+            var users = repo.GetUsers();
+
+            if (users == null || !users.Any())
             {
-                Username=dto.Username,
-                Password=dto.Password,
-                Role=dto.Role,
-                IsActive=true,
-                CreatedAt=DateTime.Now,
-                CreatedBy="system"
+                return NotFound("No users found.");
+            }
+
+            return Ok(users);
+        }
+
+        [HttpGet]
+        [Route("GetUserByID{id}")]
+        public IActionResult getUserbyID(int id) 
+        { 
+        var user= repo.GetUserByID(id);
+            if (user == null) 
+            {
+                return BadRequest("User Not Found");
+            }
+
+            return Ok(user);
+        
+        }
 
 
-            };
-            if(data!=null)
-            {
-                repo.AddUser(data);
-                return Ok("User Added Successfully");
-            }
-            else
-            {
-                return NotFound("User Not Addedd");
-            }
+        [HttpPut]
+        [Route("UpdateUser{id}")]
+        public IActionResult Update(int id,UserDTO dto)
+        {
+            if (id != dto.UserID) return BadRequest("Id mismatch");
+            var user = repo.GetUserByID(id);
+
+            if (user == null) return NotFound("user does not exixts");
+           // Source is dto, Target is model
+
+            //            if (medicine == null) return NotFound("Medine does not exixts");
+            //            mapper.Map(dto, medicine); 
+
+            dto.UpdatedAt = DateTime.Now;
+            dto.UpdatedBy = dto.UpdatedBy ?? "Defaultuser";
+            repo.UpdateUser(user);
+            return Ok("User Updated Sucessfully");
+        }
+
+
+        [HttpDelete]
+        [Route("deleteUser")]
+        public IActionResult Delete(int id) 
+        {
+        var user=repo.GetUserByID(id);
+            if (user == null) return NotFound("User not found");
+            repo.DeleteUser(id);
+            return Ok("User zdeleted Successfully");
         }
     }
 }

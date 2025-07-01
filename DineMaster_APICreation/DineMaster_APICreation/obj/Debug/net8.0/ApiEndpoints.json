@@ -1,5 +1,110 @@
 [
   {
+    "ContainingType": "DineMaster_APICreation.Controllers.MenuCategoryController",
+    "Method": "AddCategory",
+    "RelativePath": "api/MenuCategory/AddCategory",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "um",
+        "Type": "DineMaster_APICreation.DTO.MenuCategoryDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DineMaster_APICreation.Controllers.MenuCategoryController",
+    "Method": "GetMenuCategory",
+    "RelativePath": "api/MenuCategory/GetCtegory",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DineMaster_APICreation.Controllers.MenuMasterController",
+    "Method": "AddMenu",
+    "RelativePath": "api/MenuMaster/AddMenu",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "DineMaster_APICreation.DTO.MenumasterDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DineMaster_APICreation.Controllers.MenuMasterController",
+    "Method": "DeleteMenu",
+    "RelativePath": "api/MenuMaster/DeleteMenu",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DineMaster_APICreation.Controllers.MenuMasterController",
+    "Method": "GetMenuByID",
+    "RelativePath": "api/MenuMaster/GetMenuByID",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DineMaster_APICreation.Controllers.MenuMasterController",
+    "Method": "GetMenuList",
+    "RelativePath": "api/MenuMaster/GetMenuList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DineMaster_APICreation.Controllers.MenuMasterController",
+    "Method": "UpdateMenu",
+    "RelativePath": "api/MenuMaster/UpdateMenu{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "mm",
+        "Type": "DineMaster_APICreation.Models.MenuMaster",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "DineMaster_APICreation.Controllers.ReservationController",
     "Method": "AddReservation",
     "RelativePath": "api/Reservation/AddReservation",
@@ -213,6 +318,69 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [
+      {
+        "Name": "um",
+        "Type": "DineMaster_APICreation.DTO.UserDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DineMaster_APICreation.Controllers.UserController",
+    "Method": "Delete",
+    "RelativePath": "api/User/deleteUser",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DineMaster_APICreation.Controllers.UserController",
+    "Method": "getUserbyID",
+    "RelativePath": "api/User/GetUserByID{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DineMaster_APICreation.Controllers.UserController",
+    "Method": "GetUsers",
+    "RelativePath": "api/User/GetUsers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DineMaster_APICreation.Controllers.UserController",
+    "Method": "Update",
+    "RelativePath": "api/User/UpdateUser{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
       {
         "Name": "dto",
         "Type": "DineMaster_APICreation.DTO.UserDTO",
